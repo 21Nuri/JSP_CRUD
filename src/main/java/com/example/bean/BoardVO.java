@@ -4,10 +4,13 @@ import java.util.Date;
 
 public class BoardVO {
 	private int seq;
+	private String category;
+	private String photo;
 	private String title;
 	private String writer;
 	private String content;
 	private Date regdate;
+	private Date editdate;
 	private int cnt;
 	
 	public int getSeq() {
@@ -16,6 +19,10 @@ public class BoardVO {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
+	public String getCategory() {return category;}
+	public void setCategory(String category) {this.category = category;}
+	public String getPhoto() {return photo;}
+	public void setPhoto(String photo) {this.photo = photo;	}
 	public String getTitle() {
 		return title;
 	}
@@ -40,6 +47,8 @@ public class BoardVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+	public Date getEditdate() {return editdate;	}
+	public void setEditdate(Date editdate) {this.editdate = editdate;}
 	public int getCnt() {
 		return cnt;
 	}
