@@ -117,7 +117,22 @@ public class BoardDAO {
 			rs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		}
 		return list;
+	}
+
+	public String getPhotoFilename(int seq){
+		String filename = null;
+		try{
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(BOARD_GET);
+			stmt.setInt(1, seq);
+			rs = stmt.executeQuery();
+			if(rs.next()) filename = rs.getString("photo");
+			rs.close();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return filename;
 	}
 }

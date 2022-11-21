@@ -58,6 +58,7 @@
 <c:forEach items="${list}" var="u">
 	<tr>
 		<td>${u.getSeq()}</td>
+		<td><img src = "${pageContext.requst.contectPath}/upload/${u.getPhoto()}" class="photo"></td>
 		<td>${u.getCategory()}</td>
 		<td></td>
 		<td>${u.getTitle()}</td>
