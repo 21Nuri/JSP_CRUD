@@ -10,10 +10,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class FileUpload {
-    public BoardVO upladPhoto(HttpServletRequest request){
+    public BoardVO uploadPhoto(HttpServletRequest request){
         String filename = "";
         int sizeLimit = 15 * 1024 *1024;
 
+        System.out.println("filename : " + filename);
         String realPath = request.getServletContext().getRealPath("upload");
 
         File dir = new File(realPath);
@@ -40,10 +41,12 @@ public class FileUpload {
                 if(filename!=null && oldfilename!=null) FileUpload.deleteFile(request, oldfilename);
                 else if(filename==null && oldfilename!=null) filename = oldfilename;
             }
+            System.out.println("file : " + filename);
             one.setPhoto(filename);
         }catch (IOException e){
             e.printStackTrace();
         }
+        System.out.println("filename2 : " + filename);
         return one;
     }
 

@@ -20,8 +20,8 @@
 <form action="editpost.jsp" method="post">
 <input type="hidden" name="seq" value="<%=u.getSeq() %>"/>
 <table>
-	<tr><td>Photo</td><td><input type="file" name="photo" value="${vo.getPhoto()}" /><c:if test="${vo.getPhoto() ne ''}"><br />
-		<img src = "${pageContext.requst.contectPath}/upload/${vo.getPhoto()}" class="photo"></c:if></td></tr>
+	<tr><td>Photo</td><td><input type="file" name="photo" value="${vo.getPhoto()}" />
+		<img src = "${pageContext.request.contextPath}/upload/${u.getPhoto()}" class="photo"></td></tr>
 	<tr><td>Category:</td><td><input type="text" name="category" value="<%= u.getCategory()%>"/></td></tr>
 	<tr><td>Title:</td><td><input type="text" name="title" value="<%= u.getTitle()%>"/></td></tr>
 	<tr><td>Writer:</td><td><input type="text" name="writer" value="<%= u.getWriter()%>" /></td></tr>
